@@ -1,0 +1,17 @@
+{
+  "name": "frontdev",
+  "version": "1.0.0",
+  "description": "For frontend developing.",
+  "repository": "seffa4ka/frontdev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Seffka",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "forever-monitor": "^1.7.1",
+    "gulp": "^3.9.1"
+  }
+}

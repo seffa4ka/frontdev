@@ -1,0 +1,21 @@
+{
+  "name": "frontdev",
+  "description": "For frontend developing.",
+  "repository": "seffa4ka/frontdev",
+  "main": "index.js",
+  "authors": [
+    "Seffka"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
