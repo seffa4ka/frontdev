@@ -1,8 +1,15 @@
 var http = require('http');
 var fs   = require('fs');
 
+var reload = {status: false};
+
 new http.Server(function(req,res) {
-  if (req.url == '/index.html' || req.url == '/') {
+  if (req.url == '/api/reload') {
+    res.writeHead(200, {
+      'Content-Type': 'application/json'
+    });
+    res.end(JSON.stringify(reload));
+  } else if (req.url == '/index.html' || req.url == '/') {
     res.writeHead(200, {
       'Content-Type': 'text/html'
     });
@@ -31,6 +38,14 @@ new http.Server(function(req,res) {
       'Cache-Control': 'no-cache'
     });
     var file = new fs.ReadStream('src/js/libs.js');
+    sendFile(file, res);
+  }else if (req.url == '/js/frontdevbrowser.js') {
+    res.writeHead(200, {
+      'Content-Type': 'text/javascript',
+      'Vary': 'Accept-Encoding',
+      'Cache-Control': 'no-cache'
+    });
+    var file = new fs.ReadStream('src/js/frontdevbrowser.js');
     sendFile(file, res);
   } else if (req.url == '/js/common.js') {
     res.writeHead(200, {
